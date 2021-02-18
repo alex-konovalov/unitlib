@@ -39,12 +39,6 @@ if IsPrimeInt(n) then
 
 elif n=128 then
 
-  if not ARCH_IS_UNIX() then
-    Error("UnitLib package : the library of normalized unit groups \n", 
-          "of modular group algebras of groups of order 128 is compressed\n",
-  	      "with gzip. To read it under Windows you need to unpack it manually\n",
-  	      "and adjust the package code to read .g file instead of .gz\n");
-  fi;
   gzfile := Concatenation( 
                GAPInfo.PackagesInfo.("unitlib")[1].InstallationPath,
                "/data/128/", filename, ".g.gz" );
